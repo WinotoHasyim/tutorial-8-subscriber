@@ -18,10 +18,6 @@ impl MessageHandler<UserCreatedEventMessage> for UserCreatedHandler {
         println!("In Winoto Hasyim's Computer [2206025243]. Message received: {:?}", message);
         Ok(())
     }
-
-    fn get_handler_action(&self) -> String {
-        todo!()
-    }
 }
 fn main() {
     let listener = CrosstownBus::new_queue_listener("amqp://guest:guest@localhost:5672".to_owned()).unwrap();
