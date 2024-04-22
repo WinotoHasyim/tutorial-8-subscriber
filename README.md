@@ -11,3 +11,10 @@ guest:guest@localhost:5672 digunakan untuk menghubungkan message broker dengan A
 ![Simulation slow subscriber](https://i.imgur.com/4VDwwqX.png)
 
 Bisa dilihat bahwa pada gambar tersebut total queued message adalah 20 karena saya menjalankan command cargo run sebanyak 5 kali. Message yang diqueue disebabkan oleh subscriber yang lambat dalam memproses message (delay 1 detik) sehingga message akan ditampilkan di subscriber secara perlahan-lahan seperti yang ditunjukkan oleh garis ungu dalam gambar
+
+## Reflection and Running at least three subscribers
+
+![Running at least threesubscribers](https://i.imgur.com/zsNEwmO.png)
+![Running at least threesubscribers](https://i.imgur.com/JLT0u13.png)
+
+Karena terdapat 3 subscriber yang terhubung kepada 1 publisher, maka spike dari message queue akan berkurang karena message yang diperoleh subscriber akan terdistribusi oleh message brokernya dan akibatnya pemrosesan message yang dikirim oleh publisher ke subscriber-subscribernya akan berjalan lebih cepat
